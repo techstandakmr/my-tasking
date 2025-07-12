@@ -1,0 +1,33 @@
+# Node Modules (if used for frontend)
+node_modules/
+
+# Composer dependencies
+/vendor/
+
+# Environment files
+.env
+
+# System/IDE files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Log files
+*.log
+
+# OS generated files
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Cache
+*.cache
+.cache/
+
+# PHPStorm / JetBrains
+.idea/
+
+# Uploads or generated content (optional)
+uploads/

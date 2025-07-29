@@ -1,0 +1,588 @@
+:root {
+  --primary-yellow: #f4ce47;
+  --primary-dark: #212121;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --text-dark: #333333;
+  --text-light: #777777;
+  --white: #ffffff;
+  --highlight: #fff7d1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.darkModeBg1 {
+  background-color: rgb(54, 64, 70) !important;
+  color: white !important;
+  border-color: rgb(75, 85, 99) !important;
+}
+
+.darkModeBg2 {
+  background-color: rgb(54, 64, 74) !important;
+  color: white !important;
+  border-color: rgb(75, 85, 99) !important;
+}
+
+.darkModeBg3 {
+  background-color: rgb(48, 56, 65) !important;
+  color: white !important;
+  border-color: rgb(75, 85, 99) !important;
+}
+
+.darkModeBg4 {
+  background-color: rgb(38, 46, 53) !important;
+  color: white !important;
+  border-color: rgb(54, 64, 74) !important;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f3f1;
+  height: 100vh;
+}
+
+.mainContainer {
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+  column-gap: 18px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.model_box {
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+.form_container {
+  width: 38%;
+}
+
+.navbar {
+  width: 300px;
+  height: auto;
+}
+
+.menu-item {
+  transition: all 0.3s;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background: var(--primary-yellow);
+  color: white;
+}
+
+.menu-item.active,
+.menu-item.active:focus {
+  /* border-left: 4px solid red; */
+  color: white;
+}
+
+.truncate {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* main content - start */
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-yellow);
+  /* margin: auto; */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+  color: white;
+  width: max-content;
+}
+
+.actionButton:hover {
+  background: #e6bd3c;
+}
+
+.widgets {
+  display: flex;
+  padding: 20px 0px;
+  column-gap: 20px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.widget {
+  width: 100%;
+  background: var(--white);
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.widget-header h3 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  font-weight: 600;
+  padding: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.widget-header .month-year {
+  font-size: 1rem;
+  color: #333;
+}
+
+.widget-header button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.day-names {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.calendar-day-name {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.calendar-day {
+  width: 100%;
+  aspect-ratio: 1/1;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 10%;
+  transition: background 0.3s, color 0.3s;
+}
+
+.calendar-day:not(.empty):hover {
+  background: #f5c518;
+  color: #fff;
+}
+
+.calendar-day.today:not(.empty) {
+  background: #f5c518;
+  color: #fff;
+  font-weight: 700;
+}
+
+.calendar-day.empty {
+  cursor: auto;
+}
+
+.task-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dateActionButtons {
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+}
+
+.drop-up {
+  top: auto !important;
+  bottom: 100%;
+}
+
+.showOnHover {
+  transform: scale(0) !important;
+}
+
+.showChildOnParentHover:hover .showOnHover {
+  transform: scale(1) !important;
+}
+
+/* .showOnHover.drop-up {
+  bottom: 100%;
+  top: auto !important;
+  margin-bottom: 4px;
+}
+
+.showOnHover.drop-down {
+  top: 100%;
+  bottom: auto;
+  margin-top: 4px;
+} */
+
+/* task info - start */
+.otherInfoCard {
+  column-gap: 26px;
+  padding: 12px 14px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.taskCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 14px;
+  justify-content: center;
+}
+
+.taskCard {
+  width: calc(100% / 3.2);
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: space-between;
+  height: auto;
+}
+
+/* task info - end */
+/* task creating form - start */
+.task-form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.task-form h2 {
+  margin-bottom: 16px;
+}
+
+.task-form label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.task-form input,
+.task-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.task-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background-color: #f6c90e;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #e5b80d;
+}
+
+.showElemSmoothly {
+  /* height: auto; */
+  transform: translate(0px);
+  opacity: 1;
+}
+
+.hideElemSmoothly {
+  height: 0px;
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* profile card - start */
+.profileCardContainer {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* backdrop-filter: blur(5px); */
+  color: white;
+  z-index: 9999999;
+  overflow: hidden;
+  /* padding: 20px 0px; */
+}
+
+.profileCardContainerInner {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  /* border-radius: 8px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileCardPreviewContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: white;
+}
+
+.profileCardPreviewContainer .toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profileCardPreviewContainer .bottomBar,
+.profileCardPreviewContainer .toolbar {
+  padding: 20px 26px;
+  width: 100%;
+}
+
+.profileCardPreviewContainer .previewBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 28px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.croppingContainer {
+  position: relative;
+}
+
+.cropBox {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  cursor: move;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #1DA1F2;
+}
+
+.resizeHandleCropBox {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #1DA1F2;
+  cursor: nwse-resize;
+}
+
+.resizeHandleCropBox.top-left {
+  top: -5px;
+  left: -5px;
+  cursor: nw-resize;
+}
+
+.resizeHandleCropBox.top-right {
+  top: -5px;
+  right: -5px;
+  cursor: ne-resize;
+}
+
+.resizeHandleCropBox.bottom-left {
+  bottom: -5px;
+  left: -5px;
+  cursor: sw-resize;
+}
+
+.resizeHandleCropBox.bottom-right {
+  bottom: -5px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+/* profile card - end */
+@media(max-width:769px) {
+  .widgets {
+    flex-wrap: wrap;
+    row-gap: 23px;
+  }
+
+  .widget {
+    width: 100%;
+    margin: 0px;
+  }
+
+  .topbar .actionButtonsOnTopBar {
+    display: none;
+  }
+
+  .navbar :where(.accounBtnOnNavbar, .addTaskButtonOnNavbar, .navbarToggleButtonOnNavbar) {
+    display: block !important;
+  }
+
+  .navbarToggleButtonOnTopbar {
+    display: flex;
+  }
+
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    transform: translate(-100%);
+    transition: all 0.2s;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    transform: translate(0px) !important;
+  }
+
+  .navbarInner {
+    width: 50%;
+  }
+
+  .profile_card .model_box_inner {
+    width: 80% !important;
+  }
+
+  .form_container {
+    width: 80%;
+  }
+
+  .taskCard {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* width of image in editing panel */
+  .fileHandler .tall {
+    width: 140px !important;
+  }
+
+  .fileHandler .moderate {
+    width: 300px !important;
+  }
+
+  .fileHandler .wide {
+    width: 400px !important;
+  }
+
+  .fileHandler .mini2Tall {
+    width: 75px !important;
+  }
+}
+
+@media(max-width:480px) {
+  .mainContainer {
+    padding: 12px;
+  }
+
+  .navbarInner {
+    width: 80%;
+  }
+
+  .profile_card .model_box_inner {
+    width: 90% !important;
+  }
+
+  .form_container {
+    padding: 24px 20px !important;
+    width: 90% !important;
+  }
+
+  .form_container .twoFieldInOne {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profileCardInner {
+    padding: 0px;
+    padding-bottom: 24px;
+  }
+
+  .profileCardInner .actionButton {
+    flex-direction: column !important;
+    width: 95%;
+    align-items: start;
+    row-gap: 12px;
+  }
+
+  .profileCardInner .actionButton a {
+    flex-direction: row !important;
+    column-gap: 10px;
+  }
+
+  .taskCard {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* width of image in editing panel */
+  .fileHandler .square {
+    width: 290px !important;
+  }
+
+  .fileHandler .wide {
+    width: 320px !important;
+  }
+
+  .fileHandler .moderate {
+    width: 300px !important;
+  }
+
+  .fileHandler .tall {
+    width: 130px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile_card .model_box_inner {
+    width: 100% !important;
+  }
+
+  /* width of image in editing panel */
+  .fileHandler .square {
+    width: 210px !important;
+  }
+
+  .fileHandler .wide {
+    width: 230px !important;
+  }
+
+  .fileHandler .moderate {
+    width: 210px !important;
+  }
+}
+
+/* responsive - end */

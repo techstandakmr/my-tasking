@@ -16,7 +16,7 @@
 - **Backend**: PHP  
 - **Database**: MySQL  
 - **Email System**: PHPMailer with Gmail SMTP  
-- **Authentication**: JWT (Token-based login)  
+- **Authentication**: **Custom token-based login** (secure tokens generated using cryptographic functions)  
 - **UI**: Fully responsive design (mobile, tablet, desktop)
 
 ---
@@ -26,11 +26,11 @@
 ### 🧾 Account Management
 
 - **Create Account**
-  - Email verification with OTP
+  - Email verification with OTP  
   - Success confirmation email after verification
 
 - **Login**
-  - JWT-based token login  
+  - Secure custom token-based login  
   - Sends email alert on each login attempt
 
 - **Reset Email**
@@ -62,9 +62,9 @@
 
 - **Create**, **Edit**, and **Delete** tasks  
 - Each task includes:
-  - `Title`, `Description`
-  - `Stage`: Started, Pending, Completed
-  - `Priority`: High, Mid, Low
+  - `Title`, `Description`  
+  - `Stage`: Started, Pending, Completed  
+  - `Priority`: High, Mid, Low  
   - `Category`
 
 ### 📢 Smart Status Messages
@@ -87,20 +87,9 @@
 
 ---
 
-## 📁 Recommended Folder Structure
-
-/my-tasking/  
-│  
-├── /api/ # All PHP APIs  
-├── /auth/ # Authentication logic  
-├── /config/ # DB connection and constants  
-└── index.php # Main entry file
-
----
-
 ## 👤 Developer Info
 
 - **Author**: Abdul Kareem  
 - **GitHub**: [github.com/techstandakmr](https://github.com/techstandakmr)  
 - **LinkedIn**: [linkedin.com/in/abdulkareem-tech](https://linkedin.com/in/abdulkareem-tech)  
-- **Email**: [infostndmaketech@gmail.com](mailto:infostndmaketech@gmail.com)
+- **Email**: [webplusappinfo@gmail.com](mailto:webplusappinfo@gmail.com)

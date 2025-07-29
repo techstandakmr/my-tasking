@@ -47,27 +47,23 @@ if (isset($_FILES['croppedImage']) && $_FILES['croppedImage']['error'] === UPLOA
             echo json_encode([
                 "success" => true,
                 "fileURL" => $imageUrl,
-                "message" => "Upload successful",
-                "cloudData" => $cloudData
+                "message" => "Upload successful"
             ]);
         } else {
             echo json_encode([
                 "success" => false,
-                "message" => "Failed to update DB",
-                "cloudData" => $cloudData
+                "message" => "Failed to update DB"
             ]);
         }
     } catch (Exception $e) {
         echo json_encode([
             "success" => false,
-            "message" => "Cloudinary error: " . $e->getMessage(),
-            "cloudData" => $cloudData
+            "message" => "Cloudinary error: " . $e->getMessage()
         ]);
     }
 } else {
     echo json_encode([
         "success" => false,
-        "message" => "No image or upload error",
-        "cloudData" => $cloudData
+        "message" => "No image or upload error"
     ]);
 }

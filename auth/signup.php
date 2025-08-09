@@ -46,7 +46,7 @@
   function generateUserId()
   {
     $timestamp = number_format(microtime(true) * 1000, 0, '', ''); // returns a string without decimals or commas
-    return 'TASK_' . $timestamp;
+    return 'USER_' . $timestamp;
   };
 
   // Handle form submission on POST request

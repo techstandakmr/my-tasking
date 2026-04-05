@@ -3,11 +3,13 @@
 **My Tasking** is a secure and smart Task Management System built using **PHP** and **MySQL**. It enables users to create and manage tasks with full account security, including email verification, two-step authentication, and detailed task control features.
 
 ---
-## 🌐 Live Demo
 
-[https://my-tasking.wuaze.com](https://my-tasking.wuaze.com)
+## 📱 APK Download
+
+> Download the app here: [APK Link](https://github.com/techstandakmr/my-tasking-app/releases/download/v1.0.0/my-tasking.apk)
 
 ---
+
 
 ## 🚀 Technologies Used
 

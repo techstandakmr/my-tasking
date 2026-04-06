@@ -4,13 +4,6 @@
 
 ---
 
-## 📱 APK Download
-
-> Download the app here: [APK Link](https://github.com/techstandakmr/my-tasking-app/releases/download/v1.0.0/my-tasking.apk)
-
----
-
-
 ## 🚀 Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript  
@@ -86,12 +79,3 @@
 
 - Calendar view for date-based task management  
 - Auto-reminders and deadline notifications
-
----
-
-## 👤 Developer Info
-
-- **Author**: Abdul Kareem  
-- **GitHub**: [github.com/techstandakmr](https://github.com/techstandakmr)  
-- **LinkedIn**: [linkedin.com/in/abdulkareem-tech](https://linkedin.com/in/abdulkareem-tech)  
-- **Email**: [webplusappinfo@gmail.com](mailto:webplusappinfo@gmail.com)
